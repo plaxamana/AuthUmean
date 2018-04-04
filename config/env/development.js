@@ -1,4 +1,4 @@
 module.exports = {
     db: 'mongodb://localhost/meanauth',
-    secret: 'aSecret'
+    secret: 'meanSecret'
 }
