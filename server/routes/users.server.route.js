@@ -5,11 +5,11 @@ const jwt = require('jsonwebtoken');
 
 module.exports = function (app) {
     // Register Route
-    app.route('/register').post(users.register);
+    app.route('/users/register').post(users.register);
 
     // Authenication Route
-    app.route('/authenticate').post(users.authenticate);
+    app.route('/users/authenticate').post(users.authenticate);
 
     // Profile Route
-    app.route('/profile').post(users.getProfile);
+    app.route('/users/profile').get(users.getProfile);
 }

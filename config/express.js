@@ -10,6 +10,7 @@ const compress = require('compression');
 const methodOverride = require('method-override');
 const session = require('express-session');
 
+
 module.exports = function () {
     // Create a new Express app inst
     const app = express();
@@ -27,6 +28,12 @@ module.exports = function () {
     // Body Parser Middleware
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
+
+    // Passport middleware
+    app.use(passport.initialize());
+    app.use(passport.session());
+
+    require('./passport')(passport);
 
     // Configure the 'session' middleware
     app.use(session({
