@@ -1,6 +1,8 @@
 // Load module dependencies
 const User = require('mongoose').model('User');
 const passport = require('passport');
+const jwt = require('jsonwebtoken');
+const config = require('../../config/env/development');
 
 // Register function
 exports.register = function(req, res, next) {
@@ -34,7 +36,7 @@ exports.authenticate = function(req, res, next){
         User.comparePassword(password, user.password, (err, isMatch)=> {
             if(err) throw err;
             if(isMatch){
-                const token = jwt.sign(user, config.secret, {
+                const token = jwt.sign({data: user}, config.secret, {
                     expiresIn: 1800 // 30 min expiry
                 });
 
