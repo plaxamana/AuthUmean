@@ -1,7 +1,7 @@
 // Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router'; // IMPORT ROUTING
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { FlashMessagesModule } from 'angular2-flash-messages';
@@ -21,6 +21,7 @@ import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './guards/auth.guard';
 
+// ROUTING 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     ProfileComponent,
     AboutComponent,
   ],
+  // MODULES GO HERE
   imports: [
     BrowserModule,
     HttpModule,

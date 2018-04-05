@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   password: String;
 
   // When using a service, it must be injected into the constructor
+  // These services are like methods you can use
   constructor(
     private validateService: ValidateService, 
     private flashMessage: FlashMessagesService,
