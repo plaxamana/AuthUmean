@@ -16,7 +16,7 @@ export class AuthService {
     headers.append('Content-Type', 'application/json');
 
     // Sends data to our backend node server
-    return this.http.post('http://localhost:3000/users/register', user, {headers: headers})
+    return this.http.post('users/register', user, {headers: headers})
     .map(res => res.json());
   }
 
@@ -26,7 +26,7 @@ export class AuthService {
     headers.append('Content-Type', 'application/json');
 
     // Sends data to our backend node server
-    return this.http.post('http://localhost:3000/users/authenticate', user, {headers: headers})
+    return this.http.post('users/authenticate', user, {headers: headers})
     .map(res => res.json());
   }
 
@@ -42,7 +42,7 @@ export class AuthService {
     headers.append('Content-Type', 'application/json');
 
     // Retrieves JSON information from server-side application (VIA NODE)
-    return this.http.get('http://localhost:3000/users/profile', {headers: headers})
+    return this.http.get('users/profile', {headers: headers})
     .map(res => res.json());
   }
 

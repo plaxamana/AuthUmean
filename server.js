@@ -18,7 +18,7 @@ const app = configExp();
 // const passport = configurePassport();
 
 // Port Number
-const port = 3000;
+const port = 3200;
 
 app.listen(port, () => {
     console.log(`Server started on port: ${port}`);
