@@ -46,15 +46,19 @@ module.exports = function () {
     app.use(methodOverride());
 
     // Configure static file serving
-    app.use(express.static(path.join(__dirname, 'public')));
+    app.use(express.static(path.join(__dirname, '../public')));
 
     // Load the Routes
     require('../server/routes/users.server.route.js')(app);
 
-    // Temporary default route
+    // index route
     app.get('/', (req, res) => {
         res.send('invalid enpoint')
     });
+
+    app.all('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, '../public/index.html'));
+    })
 
     return app;
 }
