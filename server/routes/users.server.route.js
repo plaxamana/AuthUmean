@@ -11,5 +11,5 @@ module.exports = function (app) {
     app.route('/users/authenticate').post(users.authenticate);
 
     // Profile Route
-    app.route('/users/profile').get(users.getProfile);
+    app.route('/users/profile').get(passport.authenticate('jwt', {session: false}), users.getProfile);
 }

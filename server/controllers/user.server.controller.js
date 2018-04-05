@@ -59,6 +59,6 @@ exports.authenticate = function(req, res, next){
 
 exports.getProfile = function(req, res, next){
     // Load the profile
-    res.send('PROFILE');
+    res.json({user: req.user});
 }
 
