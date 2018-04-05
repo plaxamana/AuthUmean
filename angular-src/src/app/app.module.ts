@@ -18,6 +18,7 @@ import { AboutComponent } from './components/about/about.component';
 
 // Services
 import { ValidateService } from './services/validate.service';
+import { AuthService } from './services/auth.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     FlashMessagesModule.forRoot()
   ],
   providers: [
-    ValidateService
+    ValidateService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
